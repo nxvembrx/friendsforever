@@ -24,9 +24,9 @@ config :friendsforever, FriendsforeverWeb.Endpoint,
   code_reloader: true,
   debug_errors: true,
   secret_key_base: "EP0UQQVQIArx0nwxWmQPHyIJo4CqTaT6MeUlhPhqR9Z+YJmNW1He8GGCmRBfq3do",
+  reloadable_compilers: [:gettext, :phoenix, :elixir, :phoenix_sass],
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:friendsforever, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:friendsforever, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -56,6 +56,7 @@ config :friendsforever, FriendsforeverWeb.Endpoint,
 config :friendsforever, FriendsforeverWeb.Endpoint,
   live_reload: [
     patterns: [
+      ~r"priv/sass/.*(sass|scss)$",
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/friendsforever_web/(controllers|live|components)/.*(ex|heex)$"
