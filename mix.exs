@@ -42,7 +42,6 @@ defmodule Friendsforever.MixProject do
       {:phoenix_live_view, "~> 0.20.2"},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.3"},
-      {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.5"},
       {:finch, "~> 0.13"},
       {:telemetry_metrics, "~> 0.6"},
@@ -63,14 +62,14 @@ defmodule Friendsforever.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
+      setup: ["deps.get", "ecto.setup", "cmd --cd assets npm i"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.setup": ["esbuild.install --if-missing"],
-      "assets.build": ["esbuild friendsforever"],
+      # "assets.setup": ["esbuild.install --if-missing"],
+      # "assets.build": ["esbuild friendsforever"],
       "assets.deploy": [
-        "esbuild friendsforever --minify",
+        "cmd --cd assets node build.js --deploy",
         "mix phx.sass, phx.digest"
       ]
     ]

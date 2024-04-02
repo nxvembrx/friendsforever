@@ -26,7 +26,7 @@ config :friendsforever, FriendsforeverWeb.Endpoint,
   secret_key_base: "EP0UQQVQIArx0nwxWmQPHyIJo4CqTaT6MeUlhPhqR9Z+YJmNW1He8GGCmRBfq3do",
   reloadable_compilers: [:gettext, :phoenix, :elixir, :phoenix_sass],
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:friendsforever, ~w(--sourcemap=inline --watch)]},
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)]
   ]
 
 # ## SSL Support
