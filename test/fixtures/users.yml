@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  location: MyString
+  website: MyString
+  pronouns: MyString
+  bio: MyText
+  birthday: 2024-04-04
+
+two:
+  username: MyString
+  location: MyString
+  website: MyString
+  pronouns: MyString
+  bio: MyText
+  birthday: 2024-04-04
