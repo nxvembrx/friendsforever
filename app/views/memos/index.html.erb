@@ -1,0 +1,17 @@
+<div class="feed">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render "form", memo: Memo.new %>
+
+  <div id="memos">
+    <% @memos.each do |memo| %>
+      <%= render memo %>
+      <p>
+        <%= link_to "Show this memo", memo %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New memo", new_memo_path %>
+
+</div>

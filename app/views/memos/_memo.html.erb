@@ -1,0 +1,19 @@
+<div id="<%= dom_id memo %>" class="card memo">
+  <div class="author">
+    <div class="profile-picture">
+      <%= memo.user.username[0..1] %>
+    </div>
+    <div class="author-name">
+      <div class="display-name">
+        <%= memo.user.display_name || memo.user.username %>
+      </div>
+      <div class="username">
+        @<%= memo.user.username %>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <%= memo.body %>
+  </div>
+  <%= time_ago_in_words(memo.created_at) %> ago
+</div>

@@ -40,6 +40,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.8.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.8.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.6, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, ruby-3.0.6-p216) [gem]" level="application" />
@@ -53,6 +54,7 @@
     <orderEntry type="library" scope="PROVIDED" name="debug (v1.9.2, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.9.3, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.12.0, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.16.3, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.4, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="importmap-rails (v2.0.1, ruby-3.0.6-p216) [gem]" level="application" />
@@ -60,6 +62,7 @@
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.12.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.5, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v2.7.1, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.3, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.22.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, ruby-3.0.6-p216) [gem]" level="application" />
@@ -75,6 +78,8 @@
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.16.3, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parallel (v1.24.0, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.0.5, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.1.2, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v5.0.5, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.6.8, ruby-3.0.6-p216) [gem]" level="application" />
@@ -85,13 +90,19 @@
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.2.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v7.0.8.1, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.6.3.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.9.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.5.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.6, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.62.1, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.31.2, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sassc-rails (v2.1.2, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.19.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, ruby-3.0.6-p216) [gem]" level="application" />
@@ -99,9 +110,11 @@
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.3, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.1, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.3.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v2.0.5, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, ruby-3.0.6-p216) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v2.5.0, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, ruby-3.0.6-p216) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket (v1.2.10, ruby-3.0.6-p216) [gem]" level="application" />
@@ -143,6 +156,8 @@
         <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="scss:assets" />
+        <option value="scss:scaffold" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
@@ -181,6 +196,8 @@
         <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="scss:assets" />
+        <option value="scss:scaffold" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
