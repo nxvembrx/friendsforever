@@ -1,0 +1,27 @@
+.l-sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 273px;
+  height: 100vh;
+  padding: 20px 0 20px 30px;
+  background-color: white;
+  border: 1px solid $border-color;
+}
+
+.sidebar-menu {
+  li {
+    display: flex;
+    gap: 16px;
+    padding: 10px;
+    align-items: center;
+
+    a {
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}

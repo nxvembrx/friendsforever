@@ -1,0 +1,10 @@
+$breakpoints: (
+        sm: 640px,
+        md: 800px,
+        xl: 1024px,
+        xxl: 1600px
+);
+
+@use '../vendors/mq' with (
+	$breakpoints: $breakpoints,
+);

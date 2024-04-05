@@ -1,0 +1,29 @@
+.new-memo-wrapper {
+  display: flex;
+
+  form,
+  textarea {
+    width: 100%;
+  }
+
+  .form-top {
+    display: flex;
+    gap: 20px;
+  }
+
+  textarea {
+    resize: vertical;
+    font-family: $font-family;
+    font-size: 20px;
+    border: none;
+  }
+
+  input[type="submit"] {
+    padding: 8px 16px;
+    font-weight: bold;
+    background: $primary-color;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+}

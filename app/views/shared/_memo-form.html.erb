@@ -1,0 +1,12 @@
+<div class="card new-memo-wrapper">
+  <%= form_with model: memo do |form| %>
+    <!--    TODO: Probably not the best idea to shove a partial into form-->
+    <div class="form-top">
+      <%= render partial: "shared/profile_picture", locals: { user: current_user } %>
+      <%= form.text_area :body, placeholder: "What's on your mind?" %>
+    </div>
+
+    <%= form.submit "Say"  %>
+  <% end %>
+
+</div>

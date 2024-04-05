@@ -1,8 +1,6 @@
 <div id="<%= dom_id memo %>" class="card memo">
   <div class="author">
-    <div class="profile-picture">
-      <%= memo.user.username[0..1] %>
-    </div>
+    <%= render partial: "shared/profile_picture", locals: { user: memo.user } %>
     <div class="author-name">
       <div class="display-name">
         <%= memo.user.display_name || memo.user.username %>

@@ -1,7 +1,7 @@
-<div class="feed">
+<div class="l-feed">
   <p style="color: green"><%= notice %></p>
 
-  <%= render "form", memo: Memo.new %>
+  <%= render "shared/memo-form", memo: Memo.new %>
 
   <div id="memos">
     <% @memos.each do |memo| %>

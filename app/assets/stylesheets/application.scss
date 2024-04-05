@@ -1,6 +1,11 @@
+@use './abstracts/mq-settings';
+
+@import "themes/colors.light";
+
+@import "variables/*";
 @import "base/*";
 @import "components/*";
 @import "layout/*";
 
-@import "vendors/bulma/minireset";
 
+@import "vendors/minireset";
