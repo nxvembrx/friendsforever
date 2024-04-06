@@ -1,0 +1,28 @@
+.button {
+  padding: 8px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__primary {
+    background: $primary-color;
+    color: white;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__secondary {
+    background: $lighter-gray;
+    border: 1px solid $border-color;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

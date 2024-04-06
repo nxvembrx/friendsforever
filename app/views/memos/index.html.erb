@@ -1,12 +1,3 @@
-<div class="l-feed">
-  <p style="color: green"><%= notice %></p>
-
-  <%= render "shared/memo-form", memo: Memo.new %>
-
-  <div id="memos" class="memo-list">
-    <% @memos.each do |memo| %>
-      <%= render memo %>
-    <% end %>
-  </div>
-
-</div>
+<p style="color: green"><%= notice %></p>
+<%= render "memo-form", memo: Memo.new %>
+<%= render partial: "memo-feed", locals: { memos: @memos } %>

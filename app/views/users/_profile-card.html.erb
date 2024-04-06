@@ -1,0 +1,37 @@
+<div class="card user-profile">
+  <div class="profile-banner">
+    <img src="https://picsum.photos/id/70/700/300">
+  </div>
+  <%= render partial: "shared/profile-picture", locals: { user: user } %>
+  <div class="profile-details-wrapper">
+    <div class="details-top">
+      <h1 class="names">
+      <span class="profile-display-name">
+        <%= user.display_name || user.username %>
+      </span>
+        <span class="profile-username">
+        <%= "@#{user.username}" %>
+          <span class="profile-pronouns">
+          <%= user.pronouns %>
+        </span>
+      </span>
+      </h1>
+      <div class="mv-auto">
+        <button class="button button__secondary" style="padding: 10px">Edit profile</button>
+      </div>
+    </div>
+    <div class="profile-bio">
+      <%= user.bio %>
+    </div>
+    <div class="profile-footer">
+      <span class="location">
+        <%= image_tag "svg/outline/location" %>
+        <%= user.location %>
+      </span>
+      <span class="website">
+        <%= image_tag "svg/outline/link" %>
+        <%= user.website %>
+      </span>
+    </div>
+  </div>
+</div>

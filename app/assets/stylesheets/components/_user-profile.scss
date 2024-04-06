@@ -1,0 +1,54 @@
+.user-profile {
+  padding: 0;
+}
+
+.profile-banner {
+  height: 200px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.details-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-details-wrapper {
+  padding: 20px;
+}
+
+.profile-display-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.profile-username {
+  color: $darker-gray;
+  margin-top: 4px;
+  display: block;
+}
+
+.profile-pronouns {
+  font-weight: 300;
+}
+
+.profile-bio {
+  display: block;
+  margin: 20px 0;
+}
+
+.profile-footer {
+  display: flex;
+  gap: 10px;
+  font-weight: 300;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}

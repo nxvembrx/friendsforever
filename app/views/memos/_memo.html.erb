@@ -1,5 +1,4 @@
 <article id="<%= dom_id memo %>" class="card memo">
-  <%= link_to "", memo, class: "memo-link" %>
   <%= link_to user_path(memo.user.username), class: 'author' do %>
     <%= render partial: "shared/profile-picture", locals: { user: memo.user } %>
     <div class="author-name">

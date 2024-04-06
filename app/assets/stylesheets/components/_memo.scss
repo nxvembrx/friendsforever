@@ -1,12 +1,11 @@
-.memo {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.memo-wrapper {
   position: relative;
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    background-color: $lighter-gray;
+    .memo {
+      background-color: $lighter-gray;
+    }
   }
 
   .memo-link {
@@ -16,7 +15,14 @@
     left: 0;
     right: 0;
     z-index: 1;
+
   }
+}
+
+.memo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   .author {
     display: flex;

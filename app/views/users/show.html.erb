@@ -1,3 +1,2 @@
-<div class="card">
-  <%= @user %>
-</div>
+<%= render partial: "profile-card", locals: { user: @user } %>
+<%= render partial: "memos/memo-feed", locals: { memos: @user.memos } %>

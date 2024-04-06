@@ -1,0 +1,9 @@
+<div class="card new-memo-wrapper">
+  <%= link_to user_path(current_user.username) do %>
+    <%= render partial: "shared/profile-picture", locals: { user: current_user } %>
+  <% end %>
+  <%= form_with model: memo do |form| %>
+    <%= form.text_area :body, placeholder: "What's on your mind?", maxlength: 500 %>
+    <%= form.submit "Say", class: 'button button__primary f-right' %>
+  <% end %>
+</div>
