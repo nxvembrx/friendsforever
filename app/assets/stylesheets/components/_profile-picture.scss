@@ -1,5 +1,6 @@
 .profile-picture {
   height: 40px;
   width: 40px;
-  border: 1px solid $border-color;
+  border-radius: 5px;
+  flex-shrink: 0;
 }

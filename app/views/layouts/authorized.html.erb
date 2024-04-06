@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>friends!forever</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<body>
+<header class="l-sidebar">
+  <div class="sidebar-logo">
+    <%= image_tag "mark.png" %>
+  </div>
+  <!--  TODO: Think about refactoring this into a loop that takes values from arrays/hashes/whatever-->
+  <ul class="sidebar-menu">
+    <li>
+      <%= image_tag "svg/filled/home.svg" %>
+      <%= link_to "Home", timeline_path %>
+    </li>
+    <li>
+      <%= image_tag "svg/outline/bell.svg" %>
+      <%= link_to "Activity", timeline_path %>
+    </li>
+  </ul>
+</header>
+<main class="l-content">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+</main>
+</body>
+</html>

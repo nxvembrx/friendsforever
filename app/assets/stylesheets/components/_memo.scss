@@ -1,20 +1,56 @@
 .memo {
-
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $lighter-gray;
+  }
+
+  .memo-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
 
   .author {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: fit-content;
+    color: black;
+    text-decoration: none;
+    z-index: 2;
+
+    .display-name {
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .username {
+      font-weight: 300;
+    }
   }
 
-  .display-name {
-    font-weight: bold;
-  }
+  time {
+    z-index: 2;
+    width: fit-content;
 
-  .username {
-    font-weight: lighter;
+    a {
+      color: $darker-gray;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

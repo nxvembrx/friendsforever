@@ -3,15 +3,10 @@
 
   <%= render "shared/memo-form", memo: Memo.new %>
 
-  <div id="memos">
+  <div id="memos" class="memo-list">
     <% @memos.each do |memo| %>
       <%= render memo %>
-      <p>
-        <%= link_to "Show this memo", memo %>
-      </p>
     <% end %>
   </div>
-
-  <%= link_to "New memo", new_memo_path %>
 
 </div>

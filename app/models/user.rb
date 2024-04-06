@@ -1,3 +1,4 @@
+require 'digest'
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -11,4 +12,8 @@ class User < ApplicationRecord
   validates :bio, length: { maximum: 350 }
 
   has_many :memos
+
+  def hashed_email
+    Digest::SHA256.hexdigest(email)
+  end
 end

@@ -2,6 +2,8 @@ class MemosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_memo, only: %i[show edit update destroy]
 
+  layout 'authorized'
+
   # GET /memos or /memos.json
   def index
     @memos = Memo.all.reverse
@@ -25,7 +27,7 @@ class MemosController < ApplicationController
 
     respond_to do |format|
       if @memo.save
-        format.html { redirect_to timeline_path, notice: "Memo was successfully created." }
+        format.html { redirect_to timeline_path, notice: 'Memo was successfully created.' }
         # format.json { render :show, status: :created, location: @memo }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class MemosController < ApplicationController
   def update
     respond_to do |format|
       if @memo.update(memo_params)
-        format.html { redirect_to memo_url(@memo), notice: "Memo was successfully updated." }
+        format.html { redirect_to memo_url(@memo), notice: 'Memo was successfully updated.' }
         format.json { render :show, status: :ok, location: @memo }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +54,7 @@ class MemosController < ApplicationController
     @memo.destroy
 
     respond_to do |format|
-      format.html { redirect_to memos_url, notice: "Memo was successfully destroyed." }
+      format.html { redirect_to memos_url, notice: 'Memo was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

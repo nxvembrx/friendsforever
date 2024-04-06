@@ -2,12 +2,10 @@
 
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
   root 'static_pages#index'
 
   resources :memos, except: :index
   get '/timeline' => 'memos#index'
+
+  get '/:username' => 'users#show', as: 'user', username: %r{[^/]+}
 end

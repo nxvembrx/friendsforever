@@ -1,14 +1,13 @@
 .new-memo-wrapper {
   display: flex;
 
+  form {
+    margin-left: 16px;
+  }
+
   form,
   textarea {
     width: 100%;
-  }
-
-  .form-top {
-    display: flex;
-    gap: 20px;
   }
 
   textarea {
@@ -16,6 +15,11 @@
     font-family: $font-family;
     font-size: 20px;
     border: none;
+    padding-top: 8px;
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   input[type="submit"] {
@@ -25,5 +29,7 @@
     border: none;
     border-radius: 5px;
     color: white;
+    float: right;
+    margin-top: 14px;
   }
 }

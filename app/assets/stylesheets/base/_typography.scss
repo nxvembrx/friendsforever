@@ -1,9 +1,25 @@
 // TODO: If things go wrong, refer here https://world.hey.com/aesmail/custom-fonts-in-production-in-rails-7-0-d3765485
 
 @font-face {
-  font-family: "Inter";
+  font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: font-url("Inter-Regular.ttf");
+  src: font-url("lato-regular.woff2");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: font-url("lato-bold.woff2");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: font-url("lato-light.woff2");
 }
