@@ -5,7 +5,7 @@
       <h2>Welcome!</h2>
     </div>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form" }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div>
@@ -32,7 +32,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: "button button__primary" %>
+        <%= f.submit "Sign up", class: "button button--primary" %>
       </div>
     <% end %>
 

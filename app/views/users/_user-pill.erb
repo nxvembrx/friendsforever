@@ -2,7 +2,7 @@
   <%= render partial: "shared/profile-picture", locals: { user: user } %>
   <div class="user-pill__user-name">
     <div class="user-pill__user-name__display-name">
-      <%= user.display_name || user.username %>
+      <%= user.profile.display_name || user.username %>
     </div>
     <div class="user-pill__user-name__handle">
       <%= "@#{user.username}" %>

@@ -10,23 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_04_183758) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_07_115109) do
   create_table "memos", force: :cascade do |t|
     t.text "body", limit: 1500, null: false
     t.integer "user_id", null: false
-    t.integer "repost_count", default: 0, null: false
+    t.integer "comment_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_memos_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username", limit: 30, null: false
-    t.string "location", limit: 30
-    t.string "website", limit: 35
-    t.string "pronouns", limit: 30
-    t.text "bio", limit: 350
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "display_name", limit: 50
+    t.string "location", limit: 40
+    t.string "website", limit: 50
+    t.string "pronouns", limit: 40
+    t.text "bio", limit: 400
     t.date "birthday"
+    t.string "profile_picture"
+    t.string "banner_picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username", limit: 40, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -34,10 +44,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_04_183758) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "display_name", limit: 30
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "memos", "users"
+  add_foreign_key "profiles", "users"
 end

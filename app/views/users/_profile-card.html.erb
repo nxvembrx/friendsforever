@@ -1,37 +1,41 @@
 <div class="card user-profile">
   <div class="user-profile__banner">
-    <img src="https://picsum.photos/id/70/700/300">
+    <img src="https://picsum.photos/id/93/700/300">
   </div>
   <%= render partial: "shared/profile-picture", locals: { user: user } %>
   <div class="user-profile__details">
     <div class="user-profile__details__names">
       <h1>
       <span class="user-profile__details__names__display">
-        <%= user.display_name || user.username %>
+        <%= user.profile.display_name || user.username %>
       </span>
         <span class="user-profile__details__names__handle">
         <%= "@#{user.username}" %>
           <span class="user-profile__details__names__pronouns">
-          <%= user.pronouns %>
+          <%= user.profile.pronouns %>
         </span>
       </span>
       </h1>
       <div class="user-profile__details__names__edit-profile">
-        <button class="button button--secondary" style="padding: 10px">Edit profile</button>
+        <%= link_to "Edit profile", edit_profile_path(current_user.profile), class: "button button--secondary", style: "padding: 10px" %>
       </div>
     </div>
     <div class="user-profile__details__bio">
-      <%= user.bio %>
+      <%= user.profile.bio %>
     </div>
     <div class="user-profile__details__secondary-info">
-      <span class="location">
-        <%= image_tag "svg/outline/location" %>
-        <%= user.location %>
-      </span>
-      <span class="website">
-        <%= image_tag "svg/outline/link" %>
-        <%= user.website %>
-      </span>
+      <% unless user.profile.location.empty? %>
+        <span class="location">
+          <%= image_tag "svg/outline/location" %>
+          <%= user.profile.location %>
+        </span>
+      <% end %>
+      <% unless user.profile.website.empty? %>
+        <span class="website">
+          <%= image_tag "svg/outline/link" %>
+          <%= user.profile.website %>
+        </span>
+      <% end %>
     </div>
   </div>
 </div>

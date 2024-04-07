@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :memos, except: :index
   get '/timeline' => 'memos#index'
 
+  resources :profiles
+
   get '/:username' => 'users#show', as: 'user', username: %r{[^/]+}
 end
