@@ -10,3 +10,23 @@
   margin-top: auto;
   margin-bottom: auto;
 }
+
+.mh-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w-content {
+  width: fit-content;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.centered-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

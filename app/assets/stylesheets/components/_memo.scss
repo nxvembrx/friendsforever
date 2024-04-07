@@ -1,62 +1,16 @@
-.memo-wrapper {
-  position: relative;
-  transition: background-color 0.3s ease-in-out;
-
-  &:hover {
-    .memo {
-      background-color: $lighter-gray;
-    }
-  }
-
-  .memo-link {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-
-  }
-}
-
 .memo {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-l);
+  transition: background-color 0.3s ease-in-out;
 
-  .author {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: fit-content;
-    color: black;
-    text-decoration: none;
-    z-index: 2;
-
-    .display-name {
-      font-weight: bold;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    .username {
-      font-weight: 300;
-    }
-  }
-
-  time {
+  &__timestamp {
     z-index: 2;
     width: fit-content;
+    color: var(--color-text-muted);
 
-    a {
-      color: $darker-gray;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

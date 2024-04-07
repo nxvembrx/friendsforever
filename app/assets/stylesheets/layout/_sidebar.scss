@@ -2,26 +2,28 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-l);
   width: 273px;
   height: 100vh;
-  padding: 20px 0 20px 30px;
-  background-color: white;
-  border: 1px solid $border-color;
+  padding: var(--space-l) 0 var(--space-l) var(--space-xxl);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light);
 }
 
 .sidebar-menu {
   li {
     display: flex;
-    gap: 16px;
-    padding: 10px;
+    gap: var(--space-m);
+    padding: var(--space-s);
     align-items: flex-end;
+    border-radius: var(--border-radius);
+
+    &:hover {
+      background-color: var(--color-lighter);
+    }
 
     a {
-      color: black;
-      font-size: 18px;
-      font-weight: 400;
-      text-decoration: none;
+      font-size: var(--font-size-l);
     }
   }
 }

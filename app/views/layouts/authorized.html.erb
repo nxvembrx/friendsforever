@@ -25,6 +25,10 @@
       <%= link_to "Activity", timeline_path %>
     </li>
   </ul>
+  <div class="sidebar-profile-pill">
+    <%= render partial: "users/user-pill", locals: { user: current_user } %>
+    <%= button_to "x", destroy_user_session_path, method: :delete %>
+  </div>
 </header>
 <main>
   <div class="l-content">

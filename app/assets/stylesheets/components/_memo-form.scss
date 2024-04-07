@@ -1,0 +1,32 @@
+.memo-form {
+  display: flex;
+
+  &__profile-link {
+    height: fit-content;
+  }
+
+  form {
+    margin-left: var(--space-m);
+  }
+
+  form,
+  textarea {
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+    font-size: var(--font-size-xl);
+    border: none;
+    padding-top: var(--space-xs);
+    margin-bottom: var(--space-m);
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .button {
+    float: right;
+  }
+}

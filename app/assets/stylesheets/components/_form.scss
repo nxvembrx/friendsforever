@@ -1,0 +1,27 @@
+.branded-form-title {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h2 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  input {
+    border: 1px solid var(--color-light);
+    border-radius: 5px;
+    margin-top: 6px;
+    padding: 6px;
+  }
+}
+
+.actions {
+  margin-bottom: 20px;
+}

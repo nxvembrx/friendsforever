@@ -1,19 +1,11 @@
 <article id="<%= dom_id memo %>" class="card memo">
-  <%= link_to user_path(memo.user.username), class: 'author' do %>
-    <%= render partial: "shared/profile-picture", locals: { user: memo.user } %>
-    <div class="author-name">
-      <div class="display-name">
-        <%= memo.user.display_name || memo.user.username %>
-      </div>
-      <div class="username">
-        <%= "@#{memo.user.username}" %>
-      </div>
-    </div>
+  <%= link_to user_path(memo.user.username) do %>
+    <%= render partial: "users/user-pill", locals: { user: memo.user } %>
   <% end %>
-  <div class="body">
+  <div class="memo__body">
     <%= memo.body %>
   </div>
-  <time datetime="<%= memo.created_at %>">
+  <time class="memo__timestamp" datetime="<%= memo.created_at %>">
     <%= link_to "#{time_ago_in_words(memo.created_at)} ago", memo %>
   </time>
 </article>

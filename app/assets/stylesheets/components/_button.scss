@@ -1,28 +1,29 @@
 .button {
-  padding: 8px 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
+  display: inline-block;
+  padding: var(--space-xxs) var(--space-m);
+  font-weight: var(--font-weight-bold);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: filter 250ms;
 
-  &:hover {
-    cursor: pointer;
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    filter: brightness(105%);
   }
 
-  &__primary {
-    background: $primary-color;
-    color: white;
 
-    &:hover {
-      opacity: 0.8;
-    }
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
   }
 
-  &__secondary {
-    background: $lighter-gray;
-    border: 1px solid $border-color;
-
-    &:hover {
-      opacity: 0.7;
-    }
+  &--secondary {
+    background-color: var(--color-lighter);
+    border-color: var(--color-light);
   }
 }

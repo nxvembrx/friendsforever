@@ -1,6 +1,6 @@
 .memo-list {
-  margin-top: 16px;
+  margin-top: var(--space-m);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--space-m);
 }

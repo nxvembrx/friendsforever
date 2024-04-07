@@ -1,7 +1,7 @@
 <div class="l-feed">
   <div id="memos" class="memo-list">
     <% memos.each do |memo| %>
-      <div class="memo-wrapper">
+      <div class="memo-link-outer">
         <%= link_to "", memo, class: "memo-link" %>
         <%= render memo %>
       </div>
