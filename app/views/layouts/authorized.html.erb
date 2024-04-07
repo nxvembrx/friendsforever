@@ -7,6 +7,7 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
   </ul>
   <div class="sidebar-profile-pill">
     <%= render partial: "users/user-pill", locals: { user: current_user } %>
-    <%= button_to "x", destroy_user_session_path, method: :delete %>
+    <%= link_to "x", destroy_user_session_path, data: { turbo_method: :delete } %>
   </div>
 </header>
 <main>
