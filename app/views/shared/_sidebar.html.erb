@@ -1,0 +1,16 @@
+<nav class="sidebar-menu">
+  <div class="sidebar-menu__logo">
+    <%= image_tag "mark.png" %>
+  </div>
+
+  <%= sidebar_menu_entry('Timeline', timeline_path, 'home') %>
+  <%= sidebar_menu_entry('Activity', '/nowhere', 'bell') %>
+  <%= sidebar_menu_entry('Campsites', '/nowhere', 'campsite') %>
+  <%= sidebar_menu_entry('Bookmarks', '/nowhere', 'bookmark') %>
+  <%= sidebar_menu_entry('Profile', '/nowhere', 'profile') %>
+</nav>
+
+<%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "sidebar-profile-pill" do %>
+  <%= render partial: "users/user-pill", locals: { user: current_user } %>
+  <%= image_tag "svg/dots.svg" %>
+<% end %>

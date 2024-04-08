@@ -12,24 +12,7 @@
 
 <body>
 <header class="l-sidebar">
-  <div class="sidebar-logo">
-    <%= image_tag "mark.png" %>
-  </div>
-  <!--  TODO: Think about refactoring this into a loop that takes values from arrays/hashes/whatever-->
-  <ul class="sidebar-menu">
-    <li>
-      <%= image_tag "svg/filled/home.svg" %>
-      <%= link_to "Home", timeline_path %>
-    </li>
-    <li>
-      <%= image_tag "svg/outline/bell.svg" %>
-      <%= link_to "Activity", timeline_path %>
-    </li>
-  </ul>
-  <div class="sidebar-profile-pill">
-    <%= render partial: "users/user-pill", locals: { user: current_user } %>
-    <%= link_to "x", destroy_user_session_path, data: { turbo_method: :delete } %>
-  </div>
+  <%= render "shared/sidebar" %>
 </header>
 <main>
   <div class="l-content">

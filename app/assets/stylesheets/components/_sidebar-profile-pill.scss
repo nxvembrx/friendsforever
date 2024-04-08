@@ -2,5 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 20px;
+  margin-right: var(--space-l);
+  padding: var(--space-s);
+  border-radius: var(--border-radius-larger);
+
+  &:hover {
+    background-color: var(--color-lighter);
+  }
 }

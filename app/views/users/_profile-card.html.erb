@@ -26,13 +26,13 @@
     <div class="user-profile__details__secondary-info">
       <% unless user.profile.location.empty? %>
         <span class="location">
-          <%= image_tag "svg/outline/location" %>
+          <%= image_tag "svg/location.svg" %>
           <%= user.profile.location %>
         </span>
       <% end %>
       <% unless user.profile.website.empty? %>
         <span class="website">
-          <%= image_tag "svg/outline/link" %>
+          <%= image_tag "svg/link.svg" %>
           <%= user.profile.website %>
         </span>
       <% end %>
