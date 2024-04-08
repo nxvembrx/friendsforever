@@ -7,8 +7,16 @@
   </div>
   <footer class="memo__footer">
     <div class="memo__footer__actions">
-      <%= button_to '' do %>
-        <%= image_tag 'svg/outline/bookmark.svg' %>
+      <!--      current_user.bookmarks.exists?(memo_id: memo.id) ? :delete :-->
+      <!--      TODO: Keep in mind for possible refactoring -->
+      <% if memo.bookmarked_by?(current_user) %>
+        <%= button_to memo.bookmark_of(current_user), method: :delete do %>
+          <%= image_tag "svg/filled/bookmark.svg" %>
+        <% end %>
+      <% else %>
+        <%= button_to bookmarks_path(memo_id: memo.id) do %>
+          <%= image_tag "svg/outline/bookmark.svg" %>
+        <% end %>
       <% end %>
       <%= button_to '' do %>
         <%= image_tag 'svg/repost.svg' %>

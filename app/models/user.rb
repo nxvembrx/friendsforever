@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :username, presence: true, length: { minimum: 1, maximum: 30 }, format: { with: /\A[a-zA-Z\d_]+\z/, message: "only letters, numbers, and underscores" }
 
   has_many :memos
+  has_many :bookmarks
+  has_many :bookmarked_memos, through: :bookmarks, source: :memo
   has_one :profile
 
   after_create :create_profile

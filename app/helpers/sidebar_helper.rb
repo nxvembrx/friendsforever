@@ -3,6 +3,7 @@ module SidebarHelper
     current_path = request.path
     is_current_page = current_path == path
 
+
     link_to path do
       content_tag(:div, class: "sidebar-menu__item#{' active' if is_current_page}") do
         concat image_tag("svg/#{is_current_page ? 'filled' : 'outline'}/#{svg_icon}.svg", alt: text)

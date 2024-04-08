@@ -6,8 +6,8 @@
   <%= sidebar_menu_entry('Timeline', timeline_path, 'home') %>
   <%= sidebar_menu_entry('Activity', '/nowhere', 'bell') %>
   <%= sidebar_menu_entry('Campsites', '/nowhere', 'campsite') %>
-  <%= sidebar_menu_entry('Bookmarks', '/nowhere', 'bookmark') %>
-  <%= sidebar_menu_entry('Profile', '/nowhere', 'profile') %>
+  <%= sidebar_menu_entry('Bookmarks', bookmarks_path, 'bookmark') %>
+  <%= sidebar_menu_entry('Profile', "/#{current_user.username}", 'profile') %>
 </nav>
 
 <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "sidebar-profile-pill" do %>
