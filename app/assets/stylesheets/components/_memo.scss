@@ -4,13 +4,41 @@
   gap: var(--space-l);
   transition: background-color 0.3s ease-in-out;
 
-  &__timestamp {
-    z-index: 2;
-    width: fit-content;
-    color: var(--color-text-muted);
+  &__footer {
+    display: flex;
+    justify-content: space-between;
 
-    &:hover {
-      text-decoration: underline;
+    &__actions {
+      display: flex;
+      //gap: var(--space-xxxs);
+
+      button {
+        border: none;
+        background: none;
+        height: 28px;
+        width: 28px;
+        z-index: 2;
+        position: relative;
+        padding: 4px;
+        border-radius: var(--border-radius);
+
+        &:hover {
+          background-color: var(--color-light);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__timestamp {
+      z-index: 2;
+      width: fit-content;
+      color: var(--color-text-muted);
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
+
+
 }

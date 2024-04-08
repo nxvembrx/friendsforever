@@ -5,7 +5,20 @@
   <div class="memo__body">
     <%= memo.body %>
   </div>
-  <time class="memo__timestamp" datetime="<%= memo.created_at %>">
-    <%= link_to "#{time_ago_in_words(memo.created_at)} ago", memo %>
-  </time>
+  <footer class="memo__footer">
+    <div class="memo__footer__actions">
+      <%= button_to '' do %>
+        <%= image_tag 'svg/outline/bookmark.svg' %>
+      <% end %>
+      <%= button_to '' do %>
+        <%= image_tag 'svg/repost.svg' %>
+      <% end %>
+      <%= button_to '' do %>
+        <%= image_tag 'svg/comment.svg' %>
+      <% end %>
+    </div>
+    <time class="memo__footer__timestamp" datetime="<%= memo.created_at %>">
+      <%= link_to "#{time_ago_in_words(memo.created_at)} ago", memo %>
+    </time>
+  </footer>
 </article>
