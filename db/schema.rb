@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_08_164816) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_09_162239) do
   create_table "bookmarks", force: :cascade do |t|
     t.integer "memo_id", null: false
     t.integer "user_id", null: false
@@ -44,6 +44,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_08_164816) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "user_friendships", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "friend_id", null: false
+    t.boolean "pending", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_user_friendships_on_friend_id"
+    t.index ["user_id", "friend_id"], name: "index_user_friendships_on_user_id_and_friend_id", unique: true
+    t.index ["user_id"], name: "index_user_friendships_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", limit: 40, null: false
     t.datetime "created_at", null: false
@@ -61,4 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_08_164816) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "memos", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "user_friendships", "friends"
+  add_foreign_key "user_friendships", "users"
 end
