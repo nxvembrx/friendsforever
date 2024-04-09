@@ -1,30 +1,25 @@
-<article id="<%= dom_id memo %>" class="card memo">
-  <%= link_to user_path(memo.user.username) do %>
-    <%= render partial: "users/user-pill", locals: { user: memo.user } %>
-  <% end %>
-  <div class="memo__body">
-    <%= memo.body %>
-  </div>
-  <footer class="memo__footer">
-    <div class="memo__footer__actions">
-      <% if memo.bookmarked_by?(current_user) %>
-        <%= button_to unbookmark_path(memo), method: :delete do %>
-          <%= image_tag "svg/filled/bookmark.svg" %>
-        <% end %>
-      <% else %>
-        <%= button_to bookmark_path(memo) do %>
-          <%= image_tag "svg/outline/bookmark.svg" %>
-        <% end %>
-      <% end %>
-      <%= button_to '' do %>
-        <%= image_tag 'svg/repost.svg' %>
-      <% end %>
-      <%= button_to '' do %>
-        <%= image_tag 'svg/comment.svg' %>
-      <% end %>
+<%= turbo_frame_tag memo do %>
+  <article id="<%= dom_id memo %>" class="card memo">
+    <%= link_to user_path(memo.user.username) do %>
+      <%= render partial: "users/user-pill", locals: { user: memo.user } %>
+    <% end %>
+    <div class="memo__body">
+      <%= memo.body %>
     </div>
-    <time class="memo__footer__timestamp" datetime="<%= memo.created_at %>">
-      <%= link_to "#{time_ago_in_words(memo.created_at)} ago", memo %>
-    </time>
-  </footer>
-</article>
+    <footer class="memo__footer">
+      <div class="memo__footer__actions">
+        <%= render partial: "bookmark-memo", locals: { memo: memo } %>
+        <%= button_to '' do %>
+          <%= image_tag 'svg/repost.svg' %>
+        <% end %>
+        <%= button_to '' do %>
+          <%= image_tag 'svg/comment.svg' %>
+        <% end %>
+      </div>
+      <time class="memo__footer__timestamp" datetime="<%= memo.created_at %>">
+        <%= link_to "#{time_ago_in_words(memo.created_at)} ago", memo %>
+      </time>
+    </footer>
+  </article>
+
+<% end %>

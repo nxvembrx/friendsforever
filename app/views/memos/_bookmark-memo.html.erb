@@ -1,0 +1,11 @@
+<%= turbo_frame_tag "#{dom_id(memo)}_bookmark" do %>
+  <% if memo.bookmarked_by?(current_user) %>
+    <%= button_to unbookmark_path(memo), method: :delete do %>
+      <%= image_tag "svg/filled/bookmark.svg" %>
+    <% end %>
+  <% else %>
+    <%= button_to bookmark_path(memo) do %>
+      <%= image_tag "svg/outline/bookmark.svg" %>
+    <% end %>
+  <% end %>
+<% end %>

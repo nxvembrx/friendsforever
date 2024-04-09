@@ -16,7 +16,12 @@ class MemosController < ApplicationController
 
   def bookmark
     if @memo.bookmark(current_user)
-      flash[:notice] = 'Memo bookmarked successfully.'
+      respond_to do |format|
+        format.html { redirect_to memos_path(@memo), notice: 'Memo bookmarked successfully.' }
+        format.turbo_stream do
+          render 'bookmark', content_type: Mime[:turbo_stream]
+        end
+      end
     else
       flash[:alert] = 'Failed to bookmark memo.'
     end
@@ -24,7 +29,12 @@ class MemosController < ApplicationController
 
   def unbookmark
     if @memo.unbookmark(current_user)
-      flash[:notice] = 'Memo bookmarked successfully.'
+      respond_to do |format|
+        format.html { redirect_to memos_path(@memo), notice: 'Memo unbookmarked.' }
+        format.turbo_stream do
+          render 'bookmark', content_type: Mime[:turbo_stream]
+        end
+      end
     else
       flash[:alert] = 'Failed to bookmark memo.'
     end
