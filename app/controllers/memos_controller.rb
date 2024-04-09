@@ -1,6 +1,6 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_memo, only: %i[show edit update destroy]
+  before_action :set_memo, only: %i[show edit update destroy bookmark unbookmark]
 
   layout 'authorized'
 
@@ -9,16 +9,26 @@ class MemosController < ApplicationController
     @memos = Memo.all.reverse
   end
 
-  # GET /memos/1 or /memos/1.json
-  def show; end
-
   # GET /memos/new
   def new
     @memo = Memo.new
   end
 
-  # GET /memos/1/edit
-  def edit; end
+  def bookmark
+    if @memo.bookmark(current_user)
+      flash[:notice] = 'Memo bookmarked successfully.'
+    else
+      flash[:alert] = 'Failed to bookmark memo.'
+    end
+  end
+
+  def unbookmark
+    if @memo.unbookmark(current_user)
+      flash[:notice] = 'Memo bookmarked successfully.'
+    else
+      flash[:alert] = 'Failed to bookmark memo.'
+    end
+  end
 
   # POST /memos or /memos.json
   def create
