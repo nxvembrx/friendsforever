@@ -1,0 +1,15 @@
+<div class="user-profile__details__names__profile-action">
+  <% if user.eql?(current_user) %>
+    <%= link_to "Edit profile", edit_profile_path, class: "button button--secondary", style: "padding: 10px" %>
+  <% else %>
+    <% if current_user.friends_with?(user) %>
+      <%= link_to "Unfriend", unfriend_path(@user), data: { turbo_method: :delete }, class: "button button--secondary", style: "padding: 10px" %>
+    <% end %>
+    <% if current_user.invited?(@user) %>
+      <%= link_to "Undo invitation", unfriend_path(@user), data: { turbo_method: :delete }, class: "button button--secondary", style: "padding: 10px" %>
+    <% end %>
+    <% unless current_user.connected_with?(@user) %>
+      <%= button_to "Add friend", invite_friend_path(@user), class: "button button--primary", style: "padding: 10px" %>
+    <% end %>
+  <% end %>
+</div>

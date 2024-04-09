@@ -10,7 +10,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :username, presence: true, length: { minimum: 1, maximum: 30 },
-                       format: { with: /\A[a-zA-Z\d_]+\z/, message: 'only letters, numbers, and underscores' }
+            format: { with: /\A[a-zA-Z\d_]+\z/, message: 'only letters, numbers, and underscores' }
 
   has_many :memos
   has_many :bookmarks
@@ -128,14 +128,16 @@ class User < ApplicationRecord
                          friend_id: friendship.send(:user_id)).first
   end
 
-  def find_any_friendship_with(model)
-    pow_model_id_column = :user_id # TODO: figure out how to avoid this
-    UserFriendship.where  do
-      ((__send__(pow_model_id_column) == my { id }) &
-        (friend_id == my { model.id })) |
-        ((__send__(pow_model_id_column) == my { model.id }) &
-          (friend_id == my { id }))
-    end.order(created_at: :desc).first
+  def find_any_friendship_with(user)
+    UserFriendship.where(
+      user_id: id,
+      friend_id: user.id
+    ).or(
+      UserFriendship.where(
+        user_id: user.id,
+        friend_id: id
+      )
+    ).order(created_at: :desc).first
   end
 
   private

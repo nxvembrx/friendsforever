@@ -1,8 +1,8 @@
 class CreateUserFriendships < ActiveRecord::Migration[7.0]
   def change
     create_table :user_friendships do |t|
-      t.references :user, null: false, foreign_key: true, index: true
-      t.references :friend, null: false, foreign_key: true, index: true
+      t.belongs_to :user, index: true
+      t.belongs_to :friend, index: true
       t.boolean :pending, default: true
 
       t.timestamps

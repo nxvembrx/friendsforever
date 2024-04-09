@@ -45,8 +45,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_09_162239) do
   end
 
   create_table "user_friendships", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "friend_id", null: false
+    t.integer "user_id"
+    t.integer "friend_id"
     t.boolean "pending", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,6 +72,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_09_162239) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "memos", "users"
   add_foreign_key "profiles", "users"
-  add_foreign_key "user_friendships", "friends"
-  add_foreign_key "user_friendships", "users"
 end

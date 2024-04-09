@@ -16,21 +16,19 @@
         </span>
       </span>
       </h1>
-      <div class="user-profile__details__names__edit-profile">
-        <%= link_to "Edit profile", edit_profile_path, class: "button button--secondary", style: "padding: 10px" %>
-      </div>
+      <%= render partial: "profile-action-button", locals: { user: @user } %>
     </div>
     <div class="user-profile__details__bio">
       <%= user.profile.bio %>
     </div>
     <div class="user-profile__details__secondary-info">
-      <% unless user.profile.location.empty? %>
+      <% unless user.profile.location.blank? %>
         <span class="location">
           <%= image_tag "svg/location.svg" %>
           <%= user.profile.location %>
         </span>
       <% end %>
-      <% unless user.profile.website.empty? %>
+      <% unless user.profile.website.blank? %>
         <span class="website">
           <%= image_tag "svg/link.svg" %>
           <%= user.profile.website %>

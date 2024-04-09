@@ -17,5 +17,8 @@ Rails.application.routes.draw do
     patch '/profile' => 'profiles#update', as: 'profile'
   end
 
+  delete '/unfriend/:id' => 'user_friendship#destroy', as: 'unfriend'
+  post '/invite/:id' => 'user_friendship#create', as: 'invite_friend'
+
   get '/:username' => 'users#show', as: 'user', username: %r{[^/]+}
 end
